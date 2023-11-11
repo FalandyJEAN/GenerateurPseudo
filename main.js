@@ -13,26 +13,29 @@ document.addEventListener("DOMContentLoaded", function () {
     let form = document.querySelector("form")
     form.addEventListener("submit", function (event) {
         event.preventDefault()
+        let nomInput = document.getElementById("nom")
         let prenomInput = document.getElementById("prenom")
+        let nom = nomInput.value
         let prenom = prenomInput.value
 
         // Fonction qui génère un pseudo combiné du prénom saisi et de nombres aléatoires
-        function displayPseudo(prenom) {
+        function displayPseudo(nom,prenom) {
             let pseudoGenereElement = document.getElementById("pseudoGenere")
 
-            if (!prenom.trim()) {
-                pseudoGenereElement.textContent = "Veuillez entrer un prénom pour continuer."
+            if (!/^[a-zA-Z]+$/.test(prenom)) {
+                pseudoGenereElement.textContent = "Veuillez remplir correctement les champs pour continuer."
                 pseudoGenereElement.classList.add("errorText")
             } else {
                 let decoupagePrenom = prenom.slice(0, 4).toLowerCase()
+                let decoupageNom = nom.slice(0, 3).toLowerCase()
                 let nombreAleatoire = Math.floor(Math.random() * 1000)
-                let pseudo = decoupagePrenom + nombreAleatoire
+                let pseudo = decoupagePrenom + decoupageNom + nombreAleatoire
 
                 pseudoGenereElement.innerHTML = `Pseudo généré : <span class="pseudoText">${pseudo}</span>`
                 pseudoGenereElement.classList.remove("errorText")
             }
         }
-        displayPseudo(prenom)
+        displayPseudo(nom,prenom)
     })
 
     // Efface les valeurs des champs du formulaire

@@ -102,6 +102,12 @@ label{
     font-weight: bold;
 }
 
+input{
+  margin-bottom: 20px;
+  border-style: none;
+  border: 2px solid rgb(236, 136, 15);
+}
+
 input,textarea{
     background-color: rgba(245, 245, 245, 0.616);
 }
