@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 let nombreAleatoire = Math.floor(Math.random() * 1000)
                 let pseudo = decoupagePrenom + nombreAleatoire
 
-                pseudoGenereElement.textContent = `Pseudo généré : ${pseudo}`
+                pseudoGenereElement.innerHTML = `Pseudo généré : <span class="pseudoText">${pseudo}</span>`
                 pseudoGenereElement.classList.remove("errorText")
             }
         }

@@ -111,6 +111,16 @@ input,textarea{
     color: red;
     font-style: italic;
 }
+
+.pseudoText{
+  color: whitesmoke;
+  font-family: 'arial';
+  font-size: 20px;
+  padding: 5px;
+  border: 2px solid rgb(236, 136, 15);
+  border-radius: 5px;
+}
+
 button{
     background-color: rgb(236, 136, 15);
     color: whitesmoke;
