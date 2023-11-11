@@ -22,10 +22,17 @@ document.addEventListener("DOMContentLoaded", function () {
         function displayPseudo(nom,prenom) {
             let pseudoGenereElement = document.getElementById("pseudoGenere")
 
-            if (!/^[a-zA-Z]+$/.test(prenom) || !/^[a-zA-Z]+$/.test(nom)) {
-                pseudoGenereElement.textContent = "Veuillez remplir correctement les champs pour continuer."
+            //controle de saisie
+            if (!nom.trim() || !prenom.trim()) {
+                pseudoGenereElement.textContent = "Veuillez remplir tous les champs pour continuer."
                 pseudoGenereElement.classList.add("errorText")
-            } else {
+            } else if (!/^[a-zA-Z]+$/.test(prenom) || !/^[a-zA-Z]+$/.test(nom)) {
+                pseudoGenereElement.textContent = "Le prénom et le nom doivent contenir uniquement des lettres."
+                pseudoGenereElement.classList.add("errorText");
+            }else if(prenom===nom){
+                pseudoGenereElement.textContent = "Le prénom et le nom ne doivent pas etre identique."
+                pseudoGenereElement.classList.add("errorText")
+            }else {
                 let decoupagePrenom = prenom.slice(0, 4).toLowerCase()
                 let decoupageNom = nom.slice(0, 3).toLowerCase()
                 let nombreAleatoire = Math.floor(Math.random() * 1000)
