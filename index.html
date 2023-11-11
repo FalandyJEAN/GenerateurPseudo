@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="main.js" defer></script>
+        <title>Generateur de Pseudo</title>
+    </head>
+    <body>
+        <span class="loader"></span>
+        <div id="container" style="display: none">
+            <center>
+                <h1>Generateur de Pseudo en Javascript</h1>
+            </center>
+            <p>
+                Pour generer un pseudo, saisissez votre prenom,puis cliquez sur le bouton <span>Pseudo</span> que vous pouvez voir ci-dessous.
+            </p>
+            <br>
+    
+            <p>
+                Si vous faites une erreur ou que vous vouliez simplement recommencer,cliquer sur le bouton <span>Effacer</span>.
+            </p>
+    
+            <form>
+                <label for="prenom">Prenom :</label>
+                <input type="text" size="20" id="prenom"> 
+                <br><br>
+                <button type="submit">Pseudo</button>
+                <button type="reset">Effacer</button>
+            </form>
+            <h5 id="pseudoGenere">Pseudo généré : </h5>
+        </div>
+    </body>
+</html>
