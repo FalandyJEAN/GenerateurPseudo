@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         function displayPseudo(nom,prenom) {
             let pseudoGenereElement = document.getElementById("pseudoGenere")
 
-            if (!/^[a-zA-Z]+$/.test(prenom)) {
+            if (!/^[a-zA-Z]+$/.test(prenom) || !/^[a-zA-Z]+$/.test(nom)) {
                 pseudoGenereElement.textContent = "Veuillez remplir correctement les champs pour continuer."
                 pseudoGenereElement.classList.add("errorText")
             } else {
