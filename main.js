@@ -50,6 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("prenom").value = ""
         document.getElementById("pseudoGenere").textContent = "Pseudo généré :"
         document.getElementById("pseudoGenere").classList.remove("errorText")
-    });
+    })
 
 })
