@@ -1,15 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Affiche le loader pendant 3 secondes
     document.querySelector(".loader").style.display = "block"
 
     setTimeout(function () {
-        // Cache le loader après 3 secondes et affiche le contenu
         document.querySelector(".loader").style.display = "none"
         document.getElementById("container").style.display = "block"
         document.body.classList.add("fond")
     }, 3000)
 
-    //écouteur d'événements pour le formulaire
     let form = document.querySelector("form")
     form.addEventListener("submit", function (event) {
         event.preventDefault()
@@ -18,11 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let nom = nomInput.value
         let prenom = prenomInput.value
 
-        // Fonction qui génère un pseudo combiné du prénom saisi et de nombres aléatoires
         function displayPseudo(nom,prenom) {
             let pseudoGenereElement = document.getElementById("pseudoGenere")
 
-            //controle de saisie
             if (!nom.trim() || !prenom.trim()) {
                 pseudoGenereElement.textContent = "Veuillez remplir tous les champs pour continuer."
                 pseudoGenereElement.classList.add("errorText")
@@ -45,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
         displayPseudo(nom,prenom)
     })
 
-    // Efface les valeurs des champs du formulaire
     form.addEventListener("reset", function () {
         document.getElementById("prenom").value = ""
         document.getElementById("pseudoGenere").textContent = "Pseudo généré :"
